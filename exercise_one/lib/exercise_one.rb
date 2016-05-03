@@ -13,10 +13,14 @@ class User_Interface
     @output.puts("Hello, #{name}, nice to meet you!")
   end
 
+  def read_name
+    @input.gets.chomp
+  end
+
   def welcome_user
     query_name
-    name = @input.gets.chomp
-    greet_user name
+    name = read_name
+    greet_user(name)
   end
 
 end

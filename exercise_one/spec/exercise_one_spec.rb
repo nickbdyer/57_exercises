@@ -17,6 +17,13 @@ RSpec.describe User_Interface do
     expect(output.string).to include "Hello, Nick, nice to meet you!"
   end
 
+  it "Reads user input" do
+    input = StringIO.new("Nick\n")
+    output = StringIO.new
+    user_interface = User_Interface.new(input, output)
+    expect(user_interface.read_name).to eq("Nick")
+  end
+
   it "Can take a users name and greet them" do
     input = StringIO.new("Nick")
     output = StringIO.new
